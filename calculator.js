@@ -24,7 +24,7 @@
 
 
     function loadIt(value){
-      total=value;
+      total=isNumber(value)?value:total;
       return total;
     };
 
@@ -36,24 +36,28 @@
 
     function add(value)
     {
-      total+=value;
+      //total+=value;
+      total+=isNumber(value)?value:total;
       return total;
     }
 
     function subtract(value){
-      total-=value;
+      //total-=value;
+      total-=isNumber(value)?value:total;
       return total;
     }
 
     function multiply(value)
     {
-      total*=value;
+      //total*=value;
+      total*=isNumber(value)?value:total;
       return total;
     }
 
     function divide(value)
     {
-      total/=value;
+      //total/=value;
+      total/=isNumber(value)?value:total;
       return value;
     }
 
@@ -77,9 +81,13 @@
 
     function isNumber(value)
     {
+       if(typeof value === "number")
+       {
+        return true;
+      }
 
-
-          }
+       throw new Error();
+    }
 
     return returnObject;
   });
