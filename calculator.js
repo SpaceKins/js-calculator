@@ -6,6 +6,28 @@
  * @return {object} `calculator` object that can be used
  */
 
+  var calculatorModule=(function()
+  {
+    var memory;
+    var total=0;
+    var returnObject={
+      "load":loadIt
+      ,"getTotal":getTotal};
+
+
+    function loadIt(value){
+      total=value;
+      return total;
+    };
+
+
+    function getTotal()
+    {
+      return total;
+    }
+
+    return returnObject;
+  });
 
   /**
    * sets the `total` to the number passed in
