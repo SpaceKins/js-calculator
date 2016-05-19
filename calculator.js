@@ -8,11 +8,19 @@
 
   var calculatorModule=(function()
   {
-    var memory;
+    var memory=0;
     var total=0;
     var returnObject={
       "load":loadIt
-      ,"getTotal":getTotal};
+      ,"getTotal":getTotal
+      ,"add":add
+      ,"subtract":subtract
+      ,"multiply":multiply
+      ,"divide":divide
+      ,"recallMemory":recallMemory
+      ,"saveMemory":saveMemory
+      ,"clearMemory":clearMemory
+    };
 
 
     function loadIt(value){
@@ -26,8 +34,57 @@
       return total;
     }
 
+    function add(value)
+    {
+      total+=value;
+      return total;
+    }
+
+    function subtract(value){
+      total-=value;
+      return total;
+    }
+
+    function multiply(value)
+    {
+      total*=value;
+      return total;
+    }
+
+    function divide(value)
+    {
+      total/=value;
+      return value;
+    }
+
+
+    function recallMemory(value)
+    {
+      return memory;
+    }
+
+    function saveMemory()
+    {
+      memory=total;
+      return memory;
+    }
+
+    function clearMemory()
+    {
+      memory=0;
+      return memory;
+    }
+
+    function isNumber(value)
+    {
+
+
+          }
+
     return returnObject;
   });
+
+
 
   /**
    * sets the `total` to the number passed in
